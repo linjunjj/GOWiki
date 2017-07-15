@@ -5,6 +5,7 @@
 
 
         <TextView
+            android:text="sadfsaf"
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
