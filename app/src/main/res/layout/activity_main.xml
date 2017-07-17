@@ -10,6 +10,7 @@
         android:background="#00BCD4"
         android:fitsSystemWindows="true"
        />
+
     <com.shizhefei.view.indicator.ScrollIndicatorView
         android:id="@+id/indicator"
         android:layout_width="match_parent"
@@ -17,6 +18,8 @@
         android:background="#FEFEFE"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
+
+
 
     <View
         android:layout_width="match_parent"

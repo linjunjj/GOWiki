@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.linjun.documentwiki.R;
 import com.linjun.documentwiki.model.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,11 +19,12 @@ import java.util.List;
 
 public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder> {
 
-        private  List<String> data;
+        private  List<String> data=new ArrayList<>();
     private LayoutInflater mInflater;
       public DetailAdapter(Context context, List<String> data){
               mInflater=LayoutInflater.from(context);
           this.data=data;
+
           }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

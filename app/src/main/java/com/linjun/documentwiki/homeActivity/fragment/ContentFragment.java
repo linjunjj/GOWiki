@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.linjun.documentwiki.R;
 import com.linjun.documentwiki.homeActivity.adapter.DetailAdapter;
+import com.linjun.documentwiki.homeActivity.decoration.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,8 +31,8 @@ public class ContentFragment extends Fragment {
     Unbinder unbinder;
     @BindView(R.id.rv)
     RecyclerView rv;
-
-    List<String> list = new ArrayList<>();
+     private int page;
+      private  List<String> list ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,9 +40,20 @@ public class ContentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_content, container, false);
         unbinder = ButterKnife.bind(this, view);
         list= (List<String>) getArguments().getSerializable("type");
+        page=getArguments().getInt("page");
         DetailAdapter adapter = new DetailAdapter(getActivity(), list);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(adapter);
+        rv.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL_LIST));
+        adapter.setListener(new DetailAdapter.OnClickListener() {
+            @Override
+            public void OnClick(View view, int position) {
+
+
+
+
+            }
+        });
         return view;
     }
     @Override
