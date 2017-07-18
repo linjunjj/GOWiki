@@ -16,22 +16,18 @@ import butterknife.OnClick;
  */
 
 public class AboutActivity extends AppCompatActivity {
-    @BindView(R.id.iv_oneback)
-    ImageView ivOneback;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    @BindView(R.id.iv_oneback)
+    ImageView ivOneback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle("关于");
     }
-
     @OnClick(R.id.iv_oneback)
     public void onViewClicked() {
-            finish();
+        finish();
     }
 }

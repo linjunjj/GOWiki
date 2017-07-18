@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.linjun.documentwiki.R;
@@ -32,10 +33,10 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder
         ViewHolder viewHolder=new ViewHolder(view);
         return viewHolder;
     }
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
      holder.title.setText(data.get(position));
+        holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,9 +50,11 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder
     }
 class  ViewHolder extends RecyclerView.ViewHolder{
     TextView title;
+    RelativeLayout press;
     public ViewHolder(View itemView) {
         super(itemView);
         title=itemView.findViewById(R.id.tv_text);
+        press=itemView.findViewById(R.id.press);
     }
 
 }
@@ -60,8 +63,8 @@ public  interface  OnClickListener{
     void OnClick(View view,int position);
 }
 public  DetailAdapter setListener(OnClickListener listener){
-    mListener=listener;
-    return this;
+      mListener=listener;
+      return this;
 }
 
 }

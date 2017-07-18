@@ -8,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.linjun.documentwiki.ItemActivity.PageActivity;
 import com.linjun.documentwiki.R;
 import com.linjun.documentwiki.homeActivity.adapter.DetailAdapter;
 import com.linjun.documentwiki.homeActivity.decoration.DividerItemDecoration;
+import com.linjun.documentwiki.utils.ActionUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,12 +50,17 @@ public class ContentFragment extends Fragment {
         adapter.setListener(new DetailAdapter.OnClickListener() {
             @Override
             public void OnClick(View view, int position) {
-
-
-
-
+                   switch (view.getId()){
+                       case R.id.press:
+                           Bundle bundle=new Bundle();
+                           bundle.putInt("page",page);
+                           bundle.putInt("list",position);
+                           ActionUtils.actionStart(getActivity(), PageActivity.class,bundle);
+                           break;
+                   }
             }
         });
+
         return view;
     }
     @Override

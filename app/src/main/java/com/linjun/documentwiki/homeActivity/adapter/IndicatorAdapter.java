@@ -37,7 +37,7 @@ public class IndicatorAdapter extends IndicatorViewPager.IndicatorFragmentPagerA
         mContext=context;
         inflater=LayoutInflater.from(context);
        mFragement=initFragment();
-       //this.data=data;
+
     }
 
     @Override
@@ -53,7 +53,6 @@ public class IndicatorAdapter extends IndicatorViewPager.IndicatorFragmentPagerA
         ((TextView) convertView).setText(title[position]);
         return convertView;
     }
-
     @Override
     public Fragment getFragmentForPage(int position) {
         return mFragement.get(position) ;
